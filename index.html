@@ -129,18 +129,18 @@
         </div>
 
         <div class="flex items-center gap-4 shrink-0">
-          <a href="#offer" onclick="event.preventDefault(); document.getElementById('offer').scrollIntoView({behavior:'smooth'});" class="hidden md:inline-flex items-center gap-2 text-xs font-medium tracking-wide text-white border rounded-full px-5 py-2.5 transition-all duration-300 hover:border-[#C9A96E]/40 hover:text-[#D4B87A]" style="border-color: rgba(201, 169, 110, 0.2); background: rgba(201, 169, 110, 0.03);">
-            Jetzt starten
+          <a href="#offer" onclick="event.preventDefault(); document.getElementById('offer').scrollIntoView({behavior:'smooth'});" class="hidden md:inline-flex items-center gap-2 transition-all duration-300 hover:border-[#C9A96E]/40 hover:text-[#D4B87A] text-xs font-normal text-white tracking-wide border rounded-full pt-2.5 pr-5 pb-2.5 pl-5" style="border-color: rgba(201, 169, 110, 0.2); background: rgba(201, 169, 110, 0.03)">
+            Prozess einleiten
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right">
               <path d="M7 7h10v10"></path>
               <path d="M7 17 17 7"></path>
             </svg>
           </a>
 
-          <button id="menu-btn" onclick="const m = document.getElementById('mobile-menu'); const s = this.querySelectorAll('span'); if(m.classList.contains('hidden')){m.classList.remove('hidden');m.classList.add('flex');s[0].style.transform='translateY(3.5px) rotate(45deg)';s[1].style.transform='translateY(-3.5px) rotate(-45deg)';}else{m.classList.add('hidden');m.classList.remove('flex');s[0].style.transform='none';s[1].style.transform='none';}" class="flex flex-col justify-center items-center w-10 h-10 md:hidden text-zinc-300 hover:text-white transition-colors relative focus:outline-none">
-            <span class="h-[1.5px] transition-all duration-300 bg-current w-6 absolute" style="margin-top: -3.5px"></span>
-            <span class="w-6 h-[1.5px] bg-current transition-all duration-300 absolute" style="margin-top: 3.5px;"></span>
-          </button>
+          <button onclick="const m = document.getElementById('mobile-menu'); const s = this.querySelectorAll('span'); if(m.classList.contains('hidden')){m.classList.remove('hidden');m.classList.add('flex');s[0].style.transform='translateY(3.5px) rotate(45deg)';s[1].style.transform='translateY(-3.5px) rotate(-45deg)';const l=m.querySelectorAll('a, button');for(let i of l){if(/Jetzt starten/i.test(i.innerHTML)){i.innerHTML=i.innerHTML.replace(/Jetzt starten/gi,'Prozess einleiten');}}}else{m.classList.add('hidden');m.classList.remove('flex');s[0].style.transform='none';s[1].style.transform='none';}" class="flex flex-col md:hidden hover:text-white transition-colors focus:outline-none text-zinc-300 w-10 h-10 relative items-center justify-center" id="menu-btn">
+  <span class="h-[1.5px] transition-all duration-300 bg-current w-6 absolute" style="margin-top: -3.5px"></span>
+  <span class="w-6 h-[1.5px] bg-current transition-all duration-300 absolute" style="margin-top: 3.5px;"></span>
+</button>
         </div>
 
         <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-black/95 border-b border-white/5 backdrop-blur-xl flex-col py-6 px-6 gap-6 md:hidden z-40 shadow-2xl">
@@ -168,7 +168,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="overflow-hidden pt-32 md:pt-40 pb-20 md:pb-32 relative">
+    <section class="overflow-hidden md:pt-40 md:pb-32 pt-32 pb-20 relative">
       <div class="absolute inset-0 radial-glow pointer-events-none"></div>
 
       <div class="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-[0.03] pointer-events-none text-white mix-blend-screen hidden md:block">
@@ -202,10 +202,7 @@
             <div class="flex flex-col sm:flex-row gap-x-4 gap-y-4 items-center justify-center lg:justify-start">
               <a href="#offer" class="cta-btn w-full sm:w-auto hover:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden text-base font-medium text-black rounded-xl px-10 py-4 relative" style="background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(245, 240, 232) 100%); box-shadow: rgba(201, 169, 110, 0) 0px 0px 0px;" onmouseenter="this.style.boxShadow='0 0 40px rgba(201, 169, 110, 0.25), 0 0 80px rgba(201, 169, 110, 0.1), inset 0 0 30px rgba(201, 169, 110, 0.05)'; this.style.background='linear-gradient(135deg, #ffffff 0%, #f5edd8 50%, #f0e6cc 100%)'; this.querySelector('.btn-shimmer').style.transform='translateX(100%)'; this.querySelector('.btn-shimmer').style.opacity='1';" onmouseleave="this.style.boxShadow='0 0 0px rgba(201, 169, 110, 0)'; this.style.background='linear-gradient(135deg, #ffffff 0%, #f5f0e8 100%)'; this.querySelector('.btn-shimmer').style.transform='translateX(-100%)'; this.querySelector('.btn-shimmer').style.opacity='0';">
                 <span class="btn-shimmer absolute inset-0 pointer-events-none" style="background: linear-gradient(105deg, transparent 20%, rgba(201, 169, 110, 0.15) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(201, 169, 110, 0.15) 60%, transparent 80%);"></span>
-                <span class="z-10 flex items-center justify-center gap-2.5 relative tracking-tight">
-                  Gratis Fokus-Reset freischalten
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </span>
+                <span class="flex items-center justify-center gap-2.5 tracking-tight z-10 relative">Fokus-Reset anfordern <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
               </a>
             </div>
           </div>
@@ -246,14 +243,9 @@
                   </div>
                   <div class="h-px w-full bg-white/5 rounded-full"></div>
                   <div class="relative">
-                    <p class="leading-relaxed text-sm font-light italic text-zinc-300">
-                      <span class="text-[#C9A96E] font-serif text-2xl leading-none mr-1 align-top">
+                    <p class="leading-relaxed text-sm font-light italic text-zinc-300"><span class="text-[#C9A96E] font-serif text-2xl leading-none mr-1 align-top">
                         "
-                      </span>
-                      Die meisten Männer scheitern nicht an Disziplin.
-                      <br>
-                      Sondern an einem System, das gegen sie arbeitet.
-                    </p>
+                      </span> Die meisten Männer scheitern nicht an Disziplin, sondern an einem System, das gegen sie arbeitet.</p>
                   </div>
                 </div>
               </div>
@@ -586,10 +578,7 @@
                 Abbas Wülser
               </h3>
             </div>
-            <p class="text-zinc-400 text-sm md:text-base leading-relaxed max-w-md">
-              Systemischer Coach für Fokus, Neurostruktur und innere Stabilität
-              unter Druck.
-            </p>
+            <p class="md:text-base leading-relaxed text-sm text-zinc-400 max-w-md">Spezialist für Neurostruktur | Architekt für innere Stabilität.</p>
 
             <div class="flex flex-col sm:flex-row gap-3 mt-6">
               <div class="flex items-center justify-center lg:justify-start gap-2.5 text-xs font-normal text-zinc-300 bg-white/[0.03] border border-white/5 px-4 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
@@ -651,7 +640,7 @@
                 <div class="relative">
                   <div class="avatar-ring w-14 h-14 rounded-full p-[1.5px] group-hover:shadow-[0_0_15px_rgba(201,169,110,0.2)] transition-shadow duration-700">
                     <div class="flex overflow-hidden bg-zinc-900 w-full h-full rounded-full items-center justify-center border border-[#C9A96E]/10 group-hover:border-[#C9A96E]/40 transition-colors duration-700" data-customer="marco">
-                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ac7c7997-8548-4745-9654-8b6468c26066_320w.jpg" alt="Rogé" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
+                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/292dab5a-6076-4a12-8c2e-87bc106adabb_320w.jpg" alt="Rogé" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
                     </div>
                   </div>
                   <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-black flex items-center justify-center">
@@ -673,55 +662,52 @@
                   Führt eine Wachstumsagentur für mittelständische Betriebe, die
                   Fachkräfte und Kunden gewinnen wollen.
                 </span>
-                <span class="block md:text-xl leading-relaxed group-hover:text-white transition-colors duration-700 text-lg text-zinc-300 tracking-wide font-extralight">
-                  „Ich bin nicht mehr überfordert, wenn mehrere Aufgaben
-                  gleichzeitig auf mich zukommen. Mein Kopf ist strukturierter
-                  und mein Team profitiert direkt davon.“
-                </span>
+                <span class="block md:text-xl leading-relaxed group-hover:text-white transition-colors duration-700 text-lg text-zinc-300 tracking-wide font-extralight">„Ich habe heute mehr Ordnung und Struktur im Aufbau meines Unternehmens. Früher war ich oft blockiert, heute bin ich klarer auf Wachstum ausgerichtet.“</span>
               </p>
-              <button class="audio-btn flex gap-3 border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 group/audio w-full border rounded-xl pt-2.5 pr-3.5 pb-2.5 pl-3.5 gap-x-3 gap-y-3 items-center" onclick="event.preventDefault(); const a = this.querySelector('audio'); if(a.paused){a.play();this.querySelector('.play-icon').style.display='none';this.querySelector('.pause-icon').style.display='flex';}else{a.pause();this.querySelector('.play-icon').style.display='flex';this.querySelector('.pause-icon').style.display='none';}" type="button">
-                <audio src="https://assets.cdn.filesafe.space/vQN5GIVbvhCxn3wdbN0Q/media/69fefc82a7b9e0385a21fdaa.mp3" preload="none" onended="this.parentElement.querySelector('.play-icon').style.display='flex';this.parentElement.querySelector('.pause-icon').style.display='none';"></audio>
-                <span class="play-circle w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
-                  <span class="play-icon flex items-center justify-center cursor-pointer w-full h-full" onclick="event.preventDefault(); event.stopPropagation(); const p = this.parentElement; const pause = p.querySelector('.pause-icon'); let a = this.querySelector('audio'); if (window.currAudio &amp;&amp; window.currAudio !== a) { window.currAudio.pause(); document.querySelectorAll('.pause-icon').forEach(el =&gt; el.style.display = 'none'); document.querySelectorAll('.play-icon').forEach(el =&gt; el.style.display = 'flex'); } if(!a.dataset.init) { a.dataset.init = '1'; a.onended = () =&gt; { this.style.display = 'flex'; if(pause) pause.style.display = 'none'; }; if(pause) { pause.onclick = (e) =&gt; { e.preventDefault(); e.stopPropagation(); a.pause(); this.style.display = 'flex'; pause.style.display = 'none'; }; } } a.play(); window.currAudio = a; this.style.display = 'none'; if(pause) pause.style.display = 'flex';">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
-                      <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
-                    </svg>
-                    <audio preload="none">
-                      <source src="https://assets.cdn.filesafe.space/YjWrtj3RtpHvExdoTt59/media/6a03051785b418d57cfd136e.mp3" type="audio/mpeg">
-                    </audio>
+              
+            <div class="border-white/[0.04] group-hover:border-white/[0.08] transition-colors duration-700 border-t mt-10 pt-6">
+                <button class="audio-btn flex border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 group/audio w-full border rounded-xl pt-2.5 pr-3.5 pb-2.5 pl-3.5 gap-x-3 gap-y-3 items-center" onclick="event.preventDefault(); const a = this.querySelector('audio'); if(a.paused){a.play();this.querySelector('.play-icon').style.display='none';this.querySelector('.pause-icon').style.display='flex';}else{a.pause();this.querySelector('.play-icon').style.display='flex';this.querySelector('.pause-icon').style.display='none';}" type="button">
+                  <span class="play-circle w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
+                    <span class="play-icon flex items-center justify-center cursor-pointer w-full h-full" onclick="event.preventDefault(); event.stopPropagation(); const p = this.parentElement; const pause = p.querySelector('.pause-icon'); let a = this.querySelector('audio'); if (window.currAudio &amp;&amp; window.currAudio !== a) { window.currAudio.pause(); document.querySelectorAll('.pause-icon').forEach(el =&gt; el.style.display = 'none'); document.querySelectorAll('.play-icon').forEach(el =&gt; el.style.display = 'flex'); } if(!a.dataset.init) { a.dataset.init = '1'; a.onended = () =&gt; { this.style.display = 'flex'; if(pause) pause.style.display = 'none'; }; if(pause) { pause.onclick = (e) =&gt; { e.preventDefault(); e.stopPropagation(); a.pause(); this.style.display = 'flex'; pause.style.display = 'none'; }; } } a.play(); window.currAudio = a; this.style.display = 'none'; if(pause) pause.style.display = 'flex';">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
+                        <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+                      </svg>
+                      <audio preload="none">
+                        <source src="https://assets.cdn.filesafe.space/YjWrtj3RtpHvExdoTt59/media/6a03051785b418d57cfd136e.mp3" type="audio/mpeg">
+                      </audio>
+                    </span>
+                    <span class="pause-icon flex items-center justify-center w-full h-full" style="display: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause w-3 h-3 text-black fill-black">
+                        <rect x="14" y="3" width="5" height="18" rx="1"></rect>
+                        <rect x="5" y="3" width="5" height="18" rx="1"></rect>
+                      </svg>
+                    </span>
                   </span>
-                  <span class="pause-icon flex items-center justify-center w-full h-full" style="display: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause w-3 h-3 text-black fill-black">
-                      <rect x="14" y="3" width="5" height="18" rx="1"></rect>
-                      <rect x="5" y="3" width="5" height="18" rx="1"></rect>
-                    </svg>
+                  <div class="flex items-center gap-[3px] flex-grow h-6">
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 45%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 35%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 65%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 50%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
+                  </div>
+                  <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">
+                    0:48
                   </span>
-                </span>
-                <div class="flex items-center gap-[3px] flex-grow h-6">
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 70%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 45%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 35%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 65%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 50%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
-                </div>
-                <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">
-                  0:57
-                </span>
-              </button>
-            </div>
+                </button>
+              </div></div>
 
             <!-- Testimonial Card 2 — Burak -->
             <div class="testimonial-card snap-start shrink-0 md:w-[calc(33.333%-1rem)] border-white/[0.06] flex flex-col group transition-all duration-700 ease-out hover:-translate-y-2 hover:border-[#C9A96E]/40 hover:shadow-[0_15px_40px_-10px_rgba(201,169,110,0.2)] bg-gradient-to-b from-white/[0.03] to-white/[0.01] w-[85vw] h-auto border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative">
@@ -764,49 +750,51 @@
                   jeden Tag hilft.“
                 </span>
               </p>
-              <button class="audio-btn flex gap-3 border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 group/audio w-full border rounded-xl pt-2.5 pr-3.5 pb-2.5 pl-3.5 gap-x-3 gap-y-3 items-center" type="button" onclick="event.preventDefault(); event.stopPropagation(); (function(btn){ var a = btn.querySelector('audio.main-audio'); if(!a) return; var playIcon = btn.querySelector('.play-icon'); var pauseIcon = btn.querySelector('.pause-icon'); if(a.paused){ document.querySelectorAll('audio').forEach(function(o){ if(o!==a){ try{ o.pause(); o.currentTime = 0; }catch(e){} } }); document.querySelectorAll('.audio-btn').forEach(function(b){ if(b!==btn){ var pi=b.querySelector('.play-icon'); var pa=b.querySelector('.pause-icon'); if(pi) pi.style.display='flex'; if(pa) pa.style.display='none'; } }); a.play(); window.currAudio = a; if(playIcon) playIcon.style.display='none'; if(pauseIcon) pauseIcon.style.display='flex'; } else { a.pause(); if(playIcon) playIcon.style.display='flex'; if(pauseIcon) pauseIcon.style.display='none'; } })(this);">
-                <audio class="main-audio" src="https://assets.cdn.filesafe.space/YjWrtj3RtpHvExdoTt59/media/6a0326bb7f9c717c7ca57cec.mp3" preload="none" onended="var b=this.closest('.audio-btn'); if(b){var pi=b.querySelector('.play-icon'); var pa=b.querySelector('.pause-icon'); if(pi) pi.style.display='flex'; if(pa) pa.style.display='none';}"></audio>
-                <span class="play-circle w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
-                  <span class="play-icon flex items-center justify-center w-full h-full pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
-                      <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
-                    </svg>
+              
+            <div class="border-white/[0.04] group-hover:border-white/[0.08] transition-colors duration-700 border-t mt-10 pt-6">
+                <button class="audio-btn flex border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 group/audio w-full border rounded-xl pt-2.5 pr-3.5 pb-2.5 pl-3.5 gap-x-3 gap-y-3 items-center" onclick="event.preventDefault(); const a = this.querySelector('audio'); if(a.paused){a.play();this.querySelector('.play-icon').style.display='none';this.querySelector('.pause-icon').style.display='flex';}else{a.pause();this.querySelector('.play-icon').style.display='flex';this.querySelector('.pause-icon').style.display='none';}" type="button">
+                  <span class="play-circle w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
+                    <span class="play-icon flex items-center justify-center cursor-pointer w-full h-full" onclick="event.preventDefault(); event.stopPropagation(); const p = this.parentElement; const pause = p.querySelector('.pause-icon'); let a = this.querySelector('audio'); if (window.currAudio &amp;&amp; window.currAudio !== a) { window.currAudio.pause(); document.querySelectorAll('.pause-icon').forEach(el =&gt; el.style.display = 'none'); document.querySelectorAll('.play-icon').forEach(el =&gt; el.style.display = 'flex'); } if(!a.dataset.init) { a.dataset.init = '1'; a.onended = () =&gt; { this.style.display = 'flex'; if(pause) pause.style.display = 'none'; }; if(pause) { pause.onclick = (e) =&gt; { e.preventDefault(); e.stopPropagation(); a.pause(); this.style.display = 'flex'; pause.style.display = 'none'; }; } } a.play(); window.currAudio = a; this.style.display = 'none'; if(pause) pause.style.display = 'flex';">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
+    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" class=""></path>
+  </svg>
+  <audio preload="none">
+    <source src="https://assets.cdn.filesafe.space/YjWrtj3RtpHvExdoTt59/media/6a0326bb7f9c717c7ca57cec.mp3" type="audio/mpeg">
+  </audio>
+</span>
+                    <span class="pause-icon flex items-center justify-center w-full h-full" style="display: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause w-3 h-3 text-black fill-black">
+                        <rect x="14" y="3" width="5" height="18" rx="1"></rect>
+                        <rect x="5" y="3" width="5" height="18" rx="1"></rect>
+                      </svg>
+                    </span>
                   </span>
-                  <span class="pause-icon flex items-center justify-center w-full h-full pointer-events-none" style="display: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause w-3 h-3 text-black fill-black">
-                      <rect x="14" y="3" width="5" height="18" rx="1"></rect>
-                      <rect x="5" y="3" width="5" height="18" rx="1"></rect>
-                    </svg>
-                  </span>
-                </span>
-                <div class="flex items-center gap-[3px] flex-grow h-6 pointer-events-none">
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 70%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 45%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 35%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 65%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 50%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
-                  <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
-                </div>
-                <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider pointer-events-none">
-                  0:35
-                </span>
-              </button>
-            </div>
+                  <div class="flex items-center gap-[3px] flex-grow h-6">
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 45%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 35%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 65%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 50%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
+                  </div>
+                  <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">0:35</span>
+                </button>
+              </div></div>
 
             <!-- Testimonial Card 3 — Thomas -->
-            <div class="testimonial-card snap-start shrink-0 w-[85vw] md:w-[calc(33.333%-1rem)] border border-white/[0.06] flex flex-col group transition-all duration-700 ease-out hover:-translate-y-2 hover:border-[#C9A96E]/40 hover:shadow-[0_15px_40px_-10px_rgba(201,169,110,0.2)] bg-gradient-to-b from-white/[0.03] to-white/[0.01] h-auto rounded-2xl p-8 relative">
+            <div class="testimonial-card snap-start shrink-0 md:w-[calc(33.333%-1rem)] border-white/[0.06] flex flex-col group transition-all duration-700 ease-out hover:-translate-y-2 hover:border-[#C9A96E]/40 hover:shadow-[0_15px_40px_-10px_rgba(201,169,110,0.2)] bg-gradient-to-b from-white/[0.03] to-white/[0.01] w-[85vw] h-auto border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative">
               <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-[#C9A96E]/50 to-transparent transition-colors duration-700"></div>
               <div class="absolute top-7 right-8 pointer-events-none text-[#C9A96E]/25 group-hover:text-[#C9A96E]/70 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote">
@@ -818,7 +806,7 @@
                 <div class="relative">
                   <div class="avatar-ring w-14 h-14 rounded-full p-[1.5px] group-hover:shadow-[0_0_15px_rgba(201,169,110,0.2)] transition-shadow duration-700">
                     <div class="flex overflow-hidden bg-zinc-900 w-full h-full rounded-full items-center justify-center border border-[#C9A96E]/10 group-hover:border-[#C9A96E]/40 transition-colors duration-700">
-                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/af7a0669-a4fd-4f56-87c0-c86e6190b18a_320w.jpg" alt="Thomas" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
+                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/960ce53b-b772-4802-a150-33262b6feca2_320w.png" alt="Thomas" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
                     </div>
                   </div>
                   <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-black flex items-center justify-center">
@@ -826,27 +814,26 @@
                   </div>
                 </div>
                 <div class="">
-                  <span class="block leading-tight text-base font-normal text-zinc-100">
-                    Thomas
-                  </span>
-                  <span class="text-sm font-light text-zinc-600">
-                    38 · Geschäftsführer
-                  </span>
+                  <span class="block leading-tight text-base font-normal text-zinc-100">Peter, 57</span>
+                  <span class="text-sm font-light text-zinc-600">Abteilungsleiter · Luzern</span>
                 </div>
               </div>
-              <p class="leading-relaxed flex-grow group-hover:text-white transition-colors duration-700 text-lg font-light text-zinc-200 z-10 mb-auto relative">
-                "Unter Druck bleibe ich deutlich fokussierter. Früher war
-                schnell Chaos im Kopf."
-              </p>
-              <div class="mt-10 pt-6 border-t border-white/[0.04] group-hover:border-white/[0.08] transition-colors duration-700">
-                <button class="audio-btn flex items-center gap-3 px-3.5 py-2.5 rounded-xl border border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 bg-white/[0.02] group/audio w-full" onclick="event.preventDefault(); const a = this.querySelector('audio'); if(a.paused){a.play();this.querySelector('.play-icon').style.display='none';this.querySelector('.pause-icon').style.display='flex';}else{a.pause();this.querySelector('.play-icon').style.display='flex';this.querySelector('.pause-icon').style.display='none';}" type="button">
-                  <audio src="https://assets.cdn.filesafe.space/vQN5GIVbvhCxn3wdbN0Q/media/69fefc82a7b9e0385a21fdaa.mp3" preload="none" onended="this.parentElement.querySelector('.play-icon').style.display='flex';this.parentElement.querySelector('.pause-icon').style.display='none';"></audio>
+              
+              
+            <p class="flex flex-col gap-5 flex-grow z-10 w-full mb-auto relative">
+                <span class="block leading-relaxed border-white/[0.04] text-sm text-[#C9A96E]/90 tracking-wide font-extralight border-b pb-5">Industrie-Führungskraft mit Verantwortung für über 40 Mitarbeitende und mehr als 10 Auszubildende.</span>
+                <span class="block md:text-xl leading-relaxed group-hover:text-white transition-colors duration-700 text-lg text-zinc-300 tracking-wide font-extralight">„Ich habe verstanden, dass nicht die Arbeit selbst das Problem war, sondern das innere Chaos. Heute bin ich ruhiger, klarer und belastbarer. Mein Team profitiert davon.“</span>
+              </p><div class="border-white/[0.04] group-hover:border-white/[0.08] transition-colors duration-700 border-t mt-10 pt-6">
+                <button class="audio-btn flex border-white/[0.06] group-hover:border-white/[0.12] transition-colors duration-700 group/audio w-full border rounded-xl pt-2.5 pr-3.5 pb-2.5 pl-3.5 gap-x-3 gap-y-3 items-center" onclick="event.preventDefault(); const a = this.querySelector('audio'); if(a.paused){a.play();this.querySelector('.play-icon').style.display='none';this.querySelector('.pause-icon').style.display='flex';}else{a.pause();this.querySelector('.play-icon').style.display='flex';this.querySelector('.pause-icon').style.display='none';}" type="button">
                   <span class="play-circle w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
-                    <span class="play-icon flex items-center justify-center w-full h-full">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
-                        <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
-                      </svg>
-                    </span>
+                    <span class="play-icon flex items-center justify-center cursor-pointer w-full h-full" onclick="event.preventDefault(); event.stopPropagation(); const p = this.parentElement; const pause = p.querySelector('.pause-icon'); let a = this.querySelector('audio'); if (window.currAudio &amp;&amp; window.currAudio !== a) { window.currAudio.pause(); document.querySelectorAll('.pause-icon').forEach(el =&gt; el.style.display = 'none'); document.querySelectorAll('.play-icon').forEach(el =&gt; el.style.display = 'flex'); } if(!a.dataset.init) { a.dataset.init = '1'; a.onended = () =&gt; { this.style.display = 'flex'; if(pause) pause.style.display = 'none'; }; if(pause) { pause.onclick = (e) =&gt; { e.preventDefault(); e.stopPropagation(); a.pause(); this.style.display = 'flex'; pause.style.display = 'none'; }; } } a.play(); window.currAudio = a; this.style.display = 'none'; if(pause) pause.style.display = 'flex';">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-3 h-3 ml-0.5 text-black fill-black">
+    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" class=""></path>
+  </svg>
+  <audio preload="none">
+    <source src="https://assets.cdn.filesafe.space/YjWrtj3RtpHvExdoTt59/media/6a0326bb7f9c717c7ca57cec.mp3" type="audio/mpeg">
+  </audio>
+</span>
                     <span class="pause-icon flex items-center justify-center w-full h-full" style="display: none;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause w-3 h-3 text-black fill-black">
                         <rect x="14" y="3" width="5" height="18" rx="1"></rect>
@@ -855,31 +842,28 @@
                     </span>
                   </span>
                   <div class="flex items-center gap-[3px] flex-grow h-6">
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-700" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 100%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 55%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 85%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-700" style="height: 45%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 90%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-700" style="height: 60%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-700" style="height: 35%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 75%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-700" style="height: 50%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 30%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 45%"></div>
-                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 25%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 80%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 65%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-700" style="height: 95%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 50%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
+                    <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
                   </div>
-                  <span class="text-xs text-zinc-500 font-light tracking-wider shrink-0 tabular-nums">
-                    0:16
-                  </span>
+                  <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">0:35</span>
                 </button>
-              </div>
-            </div>
+              </div></div>
 
             <!-- Testimonial Card 4 — Michael -->
             <div class="testimonial-card snap-start shrink-0 w-[85vw] md:w-[calc(33.333%-1rem)] border border-white/[0.06] flex flex-col group transition-all duration-700 ease-out hover:-translate-y-2 hover:border-[#C9A96E]/40 hover:shadow-[0_15px_40px_-10px_rgba(201,169,110,0.2)] bg-gradient-to-b from-white/[0.03] to-white/[0.01] h-auto rounded-2xl p-8 relative">
@@ -949,9 +933,7 @@
                     <div class="w-[3px] rounded-full bg-zinc-800" style="height: 70%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
                   </div>
-                  <span class="text-xs text-zinc-500 font-light tracking-wider shrink-0 tabular-nums">
-                    0:21
-                  </span>
+                  <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">0:02</span>
                 </button>
               </div>
             </div>
@@ -969,7 +951,7 @@
                 <div class="relative">
                   <div class="avatar-ring w-14 h-14 rounded-full p-[1.5px] group-hover:shadow-[0_0_15px_rgba(201,169,110,0.2)] transition-shadow duration-700">
                     <div class="flex overflow-hidden bg-zinc-900 w-full h-full rounded-full items-center justify-center border border-[#C9A96E]/10 group-hover:border-[#C9A96E]/40 transition-colors duration-700">
-                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a67ed12b-fe89-4ef2-97b2-97ad7a54f524_320w.jpg" alt="Sarah" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
+                      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1fd24c3e-fb75-4dd5-a438-2bff5eef6fd7_320w.jpg" alt="Sarah" class="group-hover:scale-110 transition-transform duration-700 w-full h-full object-cover">
                     </div>
                   </div>
                   <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-black flex items-center justify-center">
@@ -1111,9 +1093,7 @@
                     <div class="w-[3px] rounded-full bg-zinc-800" style="height: 40%"></div>
                     <div class="w-[3px] rounded-full bg-zinc-800" style="height: 55%"></div>
                   </div>
-                  <span class="text-xs text-zinc-500 font-light tracking-wider shrink-0 tabular-nums">
-                    0:22
-                  </span>
+                  <span class="shrink-0 tabular-nums text-xs font-light text-zinc-500 tracking-wider">0:02</span>
                 </button>
               </div>
             </div>
@@ -1139,9 +1119,7 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-x-20 gap-y-20 items-center">
           <div class="">
-            <div class="inline-block text-sm font-normal rounded-md mb-8 pt-1.5 pr-3 pb-1.5 pl-3" style="background: rgba(201, 169, 110, 0.06); color: #C9A96E; border: 1px solid rgba(201, 169, 110, 0.15)">
-              Kostenloses Audio-Training
-            </div>
+            <div class="inline-block text-sm font-normal rounded-md mb-8 pt-1.5 pr-3 pb-1.5 pl-3" style="background: rgba(201, 169, 110, 0.06); color: #C9A96E; border: 1px solid rgba(201, 169, 110, 0.15)">Exklusives Neuro-Struktur Training</div>
             <h2 class="md:text-4xl leading-tight text-3xl font-medium text-white tracking-tight mb-6">
               Unterbewusstsein neu ausrichten.
               <br>
@@ -1203,41 +1181,31 @@
           <div class="border border-white/5 bg-zinc-950/50 p-8 md:p-12 rounded-3xl backdrop-blur-2xl relative overflow-hidden" style="border: 1px solid rgba(201, 169, 110, 0.08); background: rgba(15, 14, 12, 0.7);">
             <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white opacity-[0.02] blur-3xl rounded-full pointer-events-none"></div>
 
-            <h3 class="text-xl font-medium text-white tracking-tight mb-3">
-              Kostenlosen Zugang sichern
-            </h3>
-            <p class="text-base text-zinc-500 mb-10">
-              Trage deine E-Mail ein und erhalte sofort Zugang zum kostenlosen
-              Fokus-Reset.
-            </p>
+            <h3 class="text-xl font-medium text-white tracking-tight mb-3">Protokoll-Zugang autorisieren</h3>
+            <p class="text-base text-zinc-500 mb-10">Trage deine E-Mail ein und aktiviere damit die systemische Fokus-Regulation für deinen Alltag.</p>
 
             <form class="space-y-6" onsubmit="event.preventDefault(); var f=this; var btn=f.querySelector('button[type=submit]'); var msg=document.getElementById('form-message'); var fn=(f.querySelector('#name').value||'').trim(); var em=(f.querySelector('#email').value||'').trim(); if(!fn||!em){msg.textContent='Bitte fülle alle Felder aus.';msg.style.color='#ef4444';msg.style.display='block';return false;} btn.disabled=true; var orig=btn.style.opacity; btn.style.opacity='0.6'; btn.style.pointerEvents='none'; fetch('https://services.leadconnectorhq.com/hooks/YjWrtj3RtpHvExdoTt59/webhook-trigger/ccc7f99c-cb47-4979-b099-f7ab877e3b69',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fn,email:em,source:'Wülser Mentalbau Landingpage',offer:'Fokus-Reset'})}).then(function(r){if(!r.ok)throw new Error('bad'); msg.textContent='Dein Fokus-Reset wurde freigeschaltet. Schau bitte in dein E-Mail-Postfach.'; msg.style.color='#C9A96E'; msg.style.display='block'; f.reset();}).catch(function(){msg.textContent='Da ist etwas schiefgelaufen. Bitte versuche es erneut.'; msg.style.color='#ef4444'; msg.style.display='block';}).finally(function(){btn.disabled=false; btn.style.opacity=orig; btn.style.pointerEvents='';}); return false;">
               <div class="space-y-2">
-                <label for="name" class="block text-sm font-normal text-zinc-400">
-                  Vorname
-                </label>
-                <input type="text" id="name" placeholder="Dein Vorname" class="w-full bg-black border border-white/10 rounded-lg px-4 py-3.5 text-base text-zinc-200 placeholder-zinc-700 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all form-input">
+                <label for="name" class="block text-sm font-normal text-zinc-400">Vor- und Nachname</label>
+                <input type="text" placeholder="Vollständiger Name" class="placeholder-zinc-700 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all form-input text-base text-zinc-200 bg-black w-full border-white/10 border rounded-lg pt-3.5 pr-4 pb-3.5 pl-4" id="name">
               </div>
               <div class="space-y-2">
                 <label for="email" class="block text-sm font-normal text-zinc-400">
                   E-Mail Adresse
                 </label>
-                <input type="email" id="email" placeholder="name@unternehmen.de" class="w-full bg-black border border-white/10 rounded-lg px-4 py-3.5 text-base text-zinc-200 placeholder-zinc-700 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all form-input">
+                <input type="email" placeholder="deine@email.ch" class="placeholder-zinc-700 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all form-input text-base text-zinc-200 bg-black w-full border-white/10 border rounded-lg pt-3.5 pr-4 pb-3.5 pl-4" id="email">
               </div>
 
               <div class="pt-4">
                 <button type="submit" class="cta-btn hover:scale-[0.98] transition-all duration-300 flex overflow-hidden text-sm font-medium text-black w-full sm:w-auto mx-auto rounded-lg pt-3.5 pr-8 pb-3.5 pl-8 relative items-center justify-center" style="background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(245, 240, 232) 100%); box-shadow: rgba(201, 169, 110, 0) 0px 0px 0px;" onmouseenter="this.style.boxShadow='0 0 40px rgba(201, 169, 110, 0.25), 0 0 80px rgba(201, 169, 110, 0.1), inset 0 0 30px rgba(201, 169, 110, 0.05)'; this.style.background='linear-gradient(135deg, #ffffff 0%, #f5edd8 50%, #f0e6cc 100%)'; this.querySelector('.btn-shimmer').style.transform='translateX(100%)'; this.querySelector('.btn-shimmer').style.opacity='1';" onmouseleave="this.style.boxShadow='0 0 0px rgba(201, 169, 110, 0)'; this.style.background='linear-gradient(135deg, #ffffff 0%, #f5f0e8 100%)'; this.querySelector('.btn-shimmer').style.transform='translateX(-100%)'; this.querySelector('.btn-shimmer').style.opacity='0';">
                   <span class="btn-shimmer absolute inset-0 pointer-events-none" style="background: linear-gradient(105deg, transparent 20%, rgba(201, 169, 110, 0.15) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(201, 169, 110, 0.15) 60%, transparent 80%);"></span>
-                  <span class="relative z-10 flex items-center justify-center gap-2">
-                    Gratis Fokus-Reset freischalten
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                  </span>
+                  <span class="flex items-center justify-center gap-2 z-10 relative">Fokus-Reset aktivieren  <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </button>
               </div>
               <p class="text-xs text-zinc-600 text-center mt-6">
                 Sicher &amp; vertraulich. Keine Spam-Mails. Jederzeit abmeldbar.
               </p>
-              <p id="form-message" class="text-sm text-center mt-4" style="display:none;"></p>
+              <p id="form-message" class="text-sm text-center mt-4" style="display: none;"></p>
             </form>
           </div>
         </div>
