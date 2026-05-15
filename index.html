@@ -100,8 +100,44 @@
           box-shadow: 0 0 8px rgba(201, 169, 110, 0.15);
       }
     </style>
+    <style id="touch-hover-css">
+      @media (hover: none) {
+        a, button, .testimonial-card, .group, .cta-btn, .audio-btn {
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          user-select: none;
+          cursor: pointer;
+        }
+      }
+    </style>
+    <script id="touch-hover-js">
+      (function() {
+        function initTouch() {
+          var ctaBtns = document.querySelectorAll('.cta-btn');
+          ctaBtns.forEach(function(btn) {
+            if (btn.dataset.touchInit) return;
+            btn.dataset.touchInit = 'true';
+            var enterAttr = btn.getAttribute('onmouseenter');
+            var leaveAttr = btn.getAttribute('onmouseleave');
+            if (enterAttr && leaveAttr) {
+              var enterFn = new Function(enterAttr).bind(btn);
+              var leaveFn = new Function(leaveAttr).bind(btn);
+              btn.addEventListener('touchstart', function() { enterFn(); }, {passive: true});
+              btn.addEventListener('touchend', function() { setTimeout(leaveFn, 400); }, {passive: true});
+              btn.addEventListener('touchcancel', function() { leaveFn(); }, {passive: true});
+            }
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initTouch);
+        } else {
+          initTouch();
+        }
+      })();
+    </script>
   </head>
-  <body class="antialiased selection:bg-zinc-800 selection:text-white text-zinc-300">
+  <body class="antialiased selection:bg-zinc-800 selection:text-white text-zinc-300" ontouchstart="">
     <!-- Navbar -->
     <nav class="fixed z-50 bg-black/60 w-full top-0 backdrop-blur-xl" style="border-bottom: 1px solid rgba(201, 169, 110, 0.05);">
       <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
@@ -854,7 +890,6 @@
                   profitiert davon.“
                 </span>
               </p>
-              
             </div>
 
             <!-- Testimonial Card 4 — Michael -->
